@@ -112,8 +112,10 @@ cat variants1.vcf | grep '*'
 for file in *.txt; do (cat "${file}"; echo) >> concatenated.txt; done
 
 #SRA Download
-
 http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=dload&run_list=SRR8549904&format=fastq
+
+#AWK
+awk '$1=="chr13" && $4 < 16794441 && $5 > 16794441' filename.txt
 
 
 
